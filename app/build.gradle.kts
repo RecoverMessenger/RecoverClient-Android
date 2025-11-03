@@ -4,19 +4,19 @@ plugins {
 }
 
 android {
-    namespace = "com.example.helloworld"
-    compileSdk = 34
+    namespace = "com.CommitTeam.Recover"
+    compileSdk = 35
 
     buildFeatures {
         viewBinding = true
     }
 
     defaultConfig {
-        applicationId = "com.example.helloworld"
+        applicationId = "com.CommitTeam.Recover"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 36
+        versionCode = 4
+        versionName = "2.2-BETA"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,7 +40,13 @@ android {
 }
 
 dependencies {
-
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("io.socket:socket.io-client:2.1.0") {
+        exclude(group = "org.json", module = "json")
+    }
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

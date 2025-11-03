@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    style="@style/Widget.Design.BottomSheet.Modal">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tv_details_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ошибка"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <LinearLayout
+                android:id="@+id/error_details_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"> <TextView
+                android:id="@+id/tv_details_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Текст основной ошибки"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Технические подробности:"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:textColor="?android:attr/textColorSecondary"/>
+
+                <TextView
+                    android:id="@+id/tv_details_json"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/colorButtonNormal"
+                    android:padding="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="{ 'key': 'value' }"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ban_info_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"> <TextView
+                android:id="@+id/ban_reason_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Причина бана"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/ban_ban_until_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Дата разблокировки: ..."
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/timer_label_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="До разблокировки осталось:"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/timer_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0 д 0 ч 0 м 0 с"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
